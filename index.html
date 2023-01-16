@@ -16,6 +16,71 @@
       <h1>{{message}}</h1>
     </section>
 
+    <!-- Start of lesson -->
+    <!-- Part 1 - Handlers, events, replaces vanilla js addeventListener -->
+    <!-- https://vuejs.org/guide/essentials/event-handling.html#accessing-event-argument-in-inline-handlers -->
+    <div id="handler">
+      <h2>Events Example</h2>
+      <!-- Event handler with v-on and onclick -->
+      <button @click="add">Add</button>
+      <!-- Event handler with v-on and onclick -->
+
+      <button @click="reduce">Reduce</button>
+      <p>Result: {{ counter }}</p>
+      <!-- Gets value once, after that no changes can be done with v-once -->
+      <p v-once>Result that only appears once: {{ counter }}</p>
+      <!-- Event handler with v-on and input -->
+      <!-- We use one argument to work with -->
+      <input type="text" v-on:input="setName">
+      <!-- We use more than one arguments to work with, then we need to use ($event, and second argument here) -->
+<!--       <input type="text" v-on:input="setName($event, 'Carlsson')">
+ -->      <p>Your Name: {{ name }}</p>
+    </div>
+    <!-- Part 1 continues with event handler = "keyUp.Enter" -->
+    <!-- This is a shopping list that also uses v-model and index -->
+    <div id="shopping">
+      <!-- Shopping widget starts here... -->
+      <div id="shopping-list">
+        <!-- Title, if header variable doesn´t exist we have a fallback solution next to it -->
+        <h1>{{ header || 'Welcome'  }}</h1>
+        <!-- We add a shopping list form that uses v-on:keyUp.enter -->
+        <div class="add-item-form">
+          <!-- Record stops at 02:52 -->
+          <!-- Start lesson again at 03:52  -->
+          <!-- 2 events that do the same thing keyup.enter (for desktop) and
+          click event (for mobile devices) -->
+          <input @keyup.enter="items.push({id:items.length + 1, label: newItem})"
+          type="text" v-model="newItem" placeholder="Add new item">
+          <button @click="items.push({id:items.length + 1, label: newItem})" class="btn btn-primary">
+            Save item
+          </button>
+          <ul>
+            <!-- get every single item from many items in an array, get also the id -->
+            <li v-for="item in items" :key="item.id">{{ item.label }}</li>
+          </ul>
+        </div>
+        <!-- Part 2 Computed properties (always on and does not need to be called like a function) -->
+        <!-- Computed properties i almost like methods however it does not need to be reloaded all the time
+        when other values changes in the app -->
+        
+      </div>
+    </div>
+    <div id="computed">
+      <h2>Computed vs not Computed</h2>
+      <button @click="add">Add</button>
+      <button @click="reduce">Reduce</button>
+      <p>Result: {{ counter }}</p>
+      <input type="text" v-model="firstName">
+      <p>Your name: {{ giveFullName }}</p>
+    </div>
+
+    <div id="watcher">
+      <input type="text" v-model="name">
+      <input type="text" v-model="lastName">
+      
+      <p>Your Name: {{ fullName }}</p>
+    </div>
+
     <script src="app.js"></script>
   </body>
 </html>
