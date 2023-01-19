@@ -1,13 +1,13 @@
 /* Welcome to week 3 */
 
-const app = Vue.createApp({
+const message = Vue.createApp({
   data(){
     return {
       message: "Week 3 with VUE"
     }
   }
 });
-app.mount('#app');
+message.mount('#message');
 
 /* Part 1, events handler */
 const handler = Vue.createApp({
@@ -99,14 +99,8 @@ const watcher = Vue.createApp({
         }else if(value === ''){
           this.fullName = this.name + ' ' + 'Carlsson';
         }
-      },
-      template:
-      `
-    <a href=""></a>
-    <a href=""></a>
-    <a href=""></a>
-      `
-
+      }
+    
   }
 });
 watcher.mount('#watcher');
