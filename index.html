@@ -12,7 +12,7 @@
     
   </head>
   <body>
-    <section id="app" class="header">
+    <section id="message" class="header">
       <h1>{{message}}</h1>
     </section>
 
@@ -81,6 +81,21 @@
       <p>Your Name: {{ fullName }}</p>
     </div>
 
+  <!-- Part 4 Component -->
+  <div id="klassen">
+    <!-- Below is the component that we call counter-button -->
+    <counter-button></counter-button>
+  </div>
+
+  <!-- Part 5 Component with fetch -->
+  <div id="app">
+    <!-- Adding a component that includes fetch -->
+    <fetch></fetch>
+  </div>
+
     <script src="app.js"></script>
+    <script src="appWidget.js"></script>
   </body>
 </html>
+
+

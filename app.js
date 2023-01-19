@@ -99,8 +99,33 @@ const watcher = Vue.createApp({
         }else if(value === ''){
           this.fullName = this.name + ' ' + 'Carlsson';
         }
-      }
+      },
+      template:
+      `
+    <a href=""></a>
+    <a href=""></a>
+    <a href=""></a>
+      `
 
   }
 });
 watcher.mount('#watcher');
+
+/* Part 4 Components */
+const klassen = Vue.createApp({})
+
+klassen.component('counter-button',{
+data(){
+  return {
+    counter: 0
+  }
+},
+methods:{
+  onClick(){
+    this.counter++
+  }
+},
+template:'<input id="btnTest" :value="counter" @click="onClick" type="button">'
+});
+klassen.mount('#klassen');
+
