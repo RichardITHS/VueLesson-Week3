@@ -53,8 +53,14 @@ app.component('fetch',{
         this.cities = result)
         }
         /* Lunchtime at 02:54 */
-    }
+    },
     /* start again **new recording** */
+    template: `
+    <div id="fetch">
+    <label v-bind:style="{'font-size':'22px'}>Name</label>
+
+    </div>
+    `
 })
 
 /* Mounting the app to webpage and html */
